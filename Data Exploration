@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url":"https://gist.githubusercontent.com/ivombi/bc443fffdb88824b89d7241e9ef447c5/raw/417e83cd2d7aee96c5819ef849e80063c5a7a312/violence.csv",
+    "format":{"type":"csv"}
+        },
+  "transform":[
+     { "aggregate": [
+       {
+       "op": "sum",
+       "field": "fatalities",
+       "as": "Totaldeath"
+      }],
+      "groupby": ["admin1","longitude","latitude","event_type"]
+    }
+     ] 
+    ,
+    "projection": {
+    "type": "mercator"},
+  "description": "map",
+      "width": 600,
+      "height": 300,
+  "mark":"circle",
+  "encoding":{
+    "x":{"field":"latitude", "type": "quantitative"},
+    "y":{"field":"longitude","type":"quantitative"},
+    "size":{"field":"Totaldeath", "type": "quantitative"},
+    "color":{"field":"event_type","type":"nominal"}
+  }
+  
+}
