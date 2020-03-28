@@ -15,17 +15,47 @@
     }
      ] 
     ,
-    "projection": {
-    "type": "mercator"},
+    
+  "vconcat":[
+
+    {  
+      "selection": {
+        "my_selection": {"type": "single", "empty": "none"}
+      },
   "description": "map",
-      "width": 600,
-      "height": 300,
+      "width": 500,
+      "height": 200,
+      
   "mark":"circle",
   "encoding":{
     "x":{"field":"latitude", "type": "quantitative"},
     "y":{"field":"longitude","type":"quantitative"},
     "size":{"field":"Totaldeath", "type": "quantitative"},
-    "color":{"field":"event_type","type":"nominal"}
+    "color":{"field":"event_type","type":"nominal"},
+    "tooltip":[
+      {"field":"admin1","type":"nominal"},
+      {"field":"Totaldeath","type":"quantitative"}
+    ]
   }
-  
+    },
+    {
+      "width": 700,
+      "height": 200,
+      "mark":"bar",
+      "encoding":{
+        "x":{"field":"admin1","type":"nominal"},
+        "y":{"field":"Totaldeath","type":"quantitative"},
+        "tooltip":[{"field":"Totaldeath","type":"quantitative"}],
+        "color": {
+      "condition": {
+        "selection": "my_selection",
+        "value": "red"
+      },
+      "value": "blue"
+    }
+
+        }
+      }
+    
+    ]
 }
