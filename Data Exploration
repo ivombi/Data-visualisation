@@ -83,4 +83,47 @@
 
    
   }
+  
+  
+######Chart three monthly total death trend######
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url":"https://gist.githubusercontent.com/ivombi/bc443fffdb88824b89d7241e9ef447c5/raw/417e83cd2d7aee96c5819ef849e80063c5a7a312/violence.csv",
+    "format":{"type":"csv"}
+        },
+        "title":"Total Monthly death trend by Year",
+  "transform":[
+    {
+       "filter": {"field": "year", "oneOf":["2016","2017"]}
+    },
+    {
+      "calculate": "month(datum.event_date)", "as": "Month"
+    },
+     { "aggregate": [
+       {
+       "op": "sum",
+       "field": "fatalities",
+       "as": "Totaldeath"
+      }],
+      "groupby": ["Month","year"]
+    }
+     ] ,
+  
+  "description": "map",
+      "width": 600,
+      "height": 300,
+  "mark":"line",
+  "encoding":{
+    "x":{"field":"Month", "type": "quantitative"},
+    "y":{"field":"Totaldeath","type":"quantitative"},
+    "color":{"field":"year", "type": "nominal"},
+    
+    "tooltip":[
+      {"field":"year","type":"nominal"},
+      {"field":"Totaldeath","type":"quantitative"},
+      {"field":"Month","type":"nominal"}
+    ]
+  }
+  
 }
