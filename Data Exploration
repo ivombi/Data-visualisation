@@ -1,6 +1,7 @@
 
 #####PLOTONE Geo Map #########
 
+
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "data": {
@@ -15,7 +16,7 @@
        "field": "fatalities",
        "as": "Totaldeath"
       }],
-      "groupby": ["location","longitude","latitude"]
+      "groupby": ["location","longitude","latitude","admin1"]
     }
      ] 
     ,
@@ -28,9 +29,11 @@
   "encoding":{
     "x":{"field":"latitude", "type": "quantitative"},
     "y":{"field":"longitude","type":"quantitative"},
+    "color":{"field":"Totaldeath", "type": "quantitative"},
     "size":{"field":"Totaldeath", "type": "quantitative"},
     "tooltip":[
-      {"field":"location","type":"nominal"}
+      {"field":"location","type":"nominal"},
+      {"field":"Totaldeath","type":"quantitative"}
     ]
   }
   
