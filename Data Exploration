@@ -1,9 +1,13 @@
+
+#####PLOTONE Geo Map #########
+
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "data": {
     "url":"https://gist.githubusercontent.com/ivombi/bc443fffdb88824b89d7241e9ef447c5/raw/417e83cd2d7aee96c5819ef849e80063c5a7a312/violence.csv",
     "format":{"type":"csv"}
         },
+        "title":"Total deaths by Location",
   "transform":[
      { "aggregate": [
        {
@@ -11,7 +15,7 @@
        "field": "fatalities",
        "as": "Totaldeath"
       }],
-      "groupby": ["admin1","longitude","latitude","event_type"]
+      "groupby": ["location","longitude","latitude"]
     }
      ] 
     ,
@@ -25,7 +29,52 @@
     "x":{"field":"latitude", "type": "quantitative"},
     "y":{"field":"longitude","type":"quantitative"},
     "size":{"field":"Totaldeath", "type": "quantitative"},
-    "color":{"field":"event_type","type":"nominal"}
+    "tooltip":[
+      {"field":"location","type":"nominal"}
+    ]
   }
   
+}
+
+ ######Plot 2- Event type by year########
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width":200,
+  "description": "A simple bar chart with embedded data.",
+  "data":{
+    "url":"https://gist.githubusercontent.com/ivombi/bc443fffdb88824b89d7241e9ef447c5/raw/417e83cd2d7aee96c5819ef849e80063c5a7a312/violence.csv",
+    "format":{"type":"csv"}    
+  },
+  "title":"Total fatalities by Event type and Year",
+  "transform":[
+    {
+       "filter": {"field": "year", "oneOf":["2016","2017"]}
+    },
+     { "aggregate": [
+       {
+       "op": "sum",
+       "field": "fatalities",
+       "as": "Totaldeath"
+      }],
+      "groupby": ["year","event_type"]
+    }
+    
+     ], 
+  
+  "mark":"bar",
+  "encoding":{
+    "y":{"field":"event_type","type":"nominal"
+    },
+    "x":{"field":"Totaldeath","type":"quantitative"},
+    "tooltip": [
+      {"field":"Totaldeath","type":"quantitative" }
+    ],
+    "color":{
+      "field":"year", "type": "nominal"
+    }
+  
+
+   
+  }
 }
