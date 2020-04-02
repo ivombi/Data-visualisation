@@ -10,6 +10,9 @@
         },
         "title":"Total deaths by Location",
   "transform":[
+  {
+       "filter": {"field": "year", "oneOf":["2016","2017"]}
+    },
      { "aggregate": [
        {
        "op": "sum",
