@@ -130,3 +130,46 @@
   }
   
 }
+
+
+######Chart three daily total death trend######
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url":"https://gist.githubusercontent.com/ivombi/bc443fffdb88824b89d7241e9ef447c5/raw/417e83cd2d7aee96c5819ef849e80063c5a7a312/violence.csv",
+    "format":{"type":"csv"}
+        },
+        "title":"Daily Total death trend by Event",
+  "transform":[
+    {
+       "filter": {"field": "year", "oneOf":["2016","2017"]}
+    },
+    {
+      "calculate": "day(datum.event_date)", "as": "day"
+    },
+     { "aggregate": [
+       {
+       "op": "sum",
+       "field": "fatalities",
+       "as": "Totaldeath"
+      }],
+      "groupby": ["day","event_type"]
+    }
+     ] ,
+  
+  "description": "bar chart",
+      "width": 600,
+      "height": 300,
+  "mark":"bar",
+  "encoding":{
+    "x":{"field":"day", "type": "ordinal"},
+    "y":{"field":"Totaldeath","type":"quantitative"},
+    "color":{"field":"event_type", "type": "nominal"},
+    
+    "tooltip":[
+      {"field":"event_type","type":"nominal"},
+      {"field":"Totaldeath","type":"quantitative"}
+    ]
+  }
+  
+}
