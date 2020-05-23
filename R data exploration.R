@@ -9,6 +9,7 @@ violence<-read.csv("E:\\SEED\\OneDrive\\Msc. Biostatistics\\Level Two\\Second Se
 violence<-subset(violence,violence$year!=2018)
 library("altair")
 
+#Plot one#
 chart_1 <- alt$Chart(violence)$
   mark_circle()$
   encode(
