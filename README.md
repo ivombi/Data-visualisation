@@ -18,4 +18,4 @@ This data set records the dates, actors, types of violence, locations, and fatal
 ## Implementation Tools
 The visuals implementation was done using a combination of Vega Lite, Vega and Python(Altaire package) programming languages.
 ## Exploratory Analysis
-<img  src="./pics/visualization (2).png" alt="drawing" height = 300 width="500"/> <img  src="./pics/visualization.png" alt="drawing" height = 300 width="500"/>
+<img  src="./pics/visualization (2).png" alt="drawing" height = 300 width="400"/> <img  src="./pics/visualization.png" alt="drawing" height = 300 width="400"/>
