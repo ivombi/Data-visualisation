@@ -10,3 +10,5 @@ The objectives of this project is to use visualizations to response to the follo
  > - Is there a possibility to predict future violence in certain regions by certain arm groups?
  > -  Which are the regions that can be mapped as danger zones for tourists? 
  
+## Dataset Description
+This data set records the dates, actors, types of violence, locations, and fatalities of all reported political violence and protest events in Nigeria. Political violence and protest activity includes events that occur within civil wars and periods of instability, public demonstrations, and regime breakdown. A subset of the data from January 2016 to December 2017 was extracted for this study. There were 3058 data points with a dimension of 31. This data set was taken from [ACLED](https://www.acleddata.com/data/.) The Armed Conflict Location& Event Data Project (ACLED) which is a disaggregated data collection, analysis, and crisis mapping project
