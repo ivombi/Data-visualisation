@@ -15,3 +15,7 @@ This data set records the dates, actors, types of violence, locations, and fatal
 
 ## Exploring Design Space
 <img  src="./pics/Design Space.jpg" alt="drawing" height = 300 width="500"/>
+## Implementation Tools
+The visuals implementation was done using a combination of Vega Lite, Vega and Python(Altaire package) programming languages.
+## Exploratory Analysis
+<img  src="./pics/visualization (2).png" alt="drawing" height = 300 width="500"/> <img  src="./pics/visualization.png" alt="drawing" height = 300 width="500"/>
