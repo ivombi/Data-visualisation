@@ -21,3 +21,8 @@ The visuals implementation was done using a combination of Vega Lite, Vega and P
 
 ## Exploratory Analysis
 <img  src="./pics/visualization (2).png" alt="drawing" height = 300 width="400"/>   <img  src="./pics/visualization.png" alt="drawing" height = 300 width="400"/>
+<img  src="./pics/visualization (3).png" alt="drawing" height = 300 width="400"/>   <img  src="./pics/visualization(1).png" alt="drawing" height = 300 width="400"/>
+
+## Highlight of Results
+<img  src="./pics/visualization (4).png" alt="drawing" height = 300 width="400"/>   <img  src="./pics/visualization (5).png" alt="drawing" height = 300 width="400"/>
+<img  src="./pics/visualization (6).png" alt="drawing" height = 300 width="500"/>   
