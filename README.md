@@ -14,4 +14,4 @@ The objectives of this project is to use visualizations to response to the follo
 This data set records the dates, actors, types of violence, locations, and fatalities of all reported political violence and protest events in Nigeria. Political violence and protest activity includes events that occur within civil wars and periods of instability, public demonstrations, and regime breakdown. A subset of the data from January 2016 to December 2017 was extracted for this study. There were 3058 data points with a dimension of 31. This data set was taken from [ACLED](https://www.acleddata.com/data/.) The Armed Conflict Location& Event Data Project (ACLED) which is a disaggregated data collection, analysis, and crisis mapping project
 
 ## Exploring Design Space
-<img  src="./pics/Design Space.jpg" alt="drawing" height = 200 width="400"/>
+<img  src="./pics/Design Space.jpg" alt="drawing" height = 300 width="500"/>
